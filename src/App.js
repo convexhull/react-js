@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';                             //Webpack allows us to import CSS files into JS files. 
 import Person from './Person/Person';
 
+
 class App extends Component {
   state = {
     persons : [
@@ -28,16 +29,13 @@ class App extends Component {
     const  persons = [...this.state.persons];
     persons[personIndex] = person;
     this.setState({persons});
-  }
-                                              //Object.assign({},obj) to copy object!!
-                                              //... to copy array/object !!!
+  }                                            //... to copy array/object !!!        //Object.assign({},obj) to copy object!!
   togglePersonsHandler = ()=> {
     const doesShow = this.state.showPersons;
     this.setState({
       showPersons : !doesShow
     });
   }
-    
 
   render() {
     const style = {
@@ -46,7 +44,8 @@ class App extends Component {
       font : 'inherit',
       border : '1px solid blue',
       padding : '8px',
-      cursor : 'pointer'
+      cursor : 'pointer',
+    
     }
 
     let classes = [];
@@ -68,7 +67,7 @@ class App extends Component {
       )
       style.backgroundColor = 'red';
     }
-    return (
+    return (   
       <div className="App">
         <h1>Hi I'm React App</h1>
         <p className = {classes.join(' ')}>This is really working !</p>
